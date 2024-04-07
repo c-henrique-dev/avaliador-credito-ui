@@ -1,0 +1,41 @@
+<mat-drawer-container class="h-full" autosize>
+    <mat-drawer class="w-56" #drawer opened="true" mode="side" position="start">
+        <mat-nav-list>
+
+            <a mat-list-item [routerLink]="['cliente']">
+                <div class="flex">
+                    <mat-icon>account_circle</mat-icon>
+                    <span class="text-base font-medium ml-2">Cliente</span>
+                </div>
+            </a>
+
+            <a mat-list-item [routerLink]="['cartao']">
+                <div class="flex">
+                    <mat-icon>payment</mat-icon>
+                    <span class="text-base font-medium ml-2">Cartão</span>
+                </div>
+            </a>
+
+            <mat-expansion-panel [class.mat-elevation-z0]="true">
+                <mat-expansion-panel-header>
+                    <mat-icon>payment</mat-icon>
+                    <span class="text-base font-medium ml-2">Avaliador</span>
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <a mat-list-item routerLink="avaliador/realizarAvaliacao">
+                        <span class="text-base font-medium ml-2">Fazer Avaliação</span>
+                    </a>
+                    <a mat-list-item routerLink="avaliador/solicitarCartao">
+                        <span class="text-base font-medium ml-2">Solicitar Cartão</span>
+                    </a>
+                    <a mat-list-item routerLink="avaliador/situacaoCliente">
+                        <span class="text-base font-medium ml-2">Situação Cliente</span>
+                    </a>
+                </mat-nav-list>
+            </mat-expansion-panel>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,35 @@
+<div class="container-cadastro">
+    <mat-form-field class="w-[500px]">
+        <input matInput placeholder="Informe uma renda" [(ngModel)]="inputValue" />
+        <button class="absolute inset-y-0 right-0 flex items-center justify-center px-2" (click)="pesquisar()">
+            <mat-icon>search</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+<div class="container-cadastro">
+    <h1>Solicite o Cartão</h1>
+    <form class="example-form" [formGroup]="formAvaliador">
+        <mat-form-field class="example-full-width">
+            <mat-label>CPF</mat-label>
+            <input matInput placeholder="CPF do cliente" formControlName="cpf" />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Cartão</mat-label>
+            <mat-select formControlName="cartao">
+                <mat-option *ngFor="let cartao of cartoes" value="{{cartao.id}}">{{cartao.nome}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Endereço</mat-label>
+            <input matInput placeholder="Endereço do cliente" formControlName="endereco" />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Limite do cartão</mat-label>
+            <input matInput placeholder="Limite" formControlName="limite" />
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="salvarSolicitacao()">Solicitar</button>
+    </form>
+</div>

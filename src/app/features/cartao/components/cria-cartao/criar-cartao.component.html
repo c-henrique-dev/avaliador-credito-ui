@@ -1,0 +1,17 @@
+<section class="container-cadastro">
+  <h1>Infomações do Cartão</h1>
+  <form class="example-form" [formGroup]="formCartao">
+    <app-input-normal formControlName="nome" type="text" label="Nome" placeholder="Nome do cartão">
+    </app-input-normal>
+
+    <app-select formControlName="bandeira" [items]="listaCartoes" label="Bandeira"> </app-select>
+
+    <app-input-normal formControlName="renda" type="text" label="Renda" placeholder="Renda">
+    </app-input-normal>
+
+    <app-input-normal formControlName="limite" type="text" label="Limite" placeholder="Limite">
+    </app-input-normal>
+
+    <app-button label="Cadastrar" color="primary" (buttonClick)="salvarCartao()"></app-button>
+  </form>
+</section>

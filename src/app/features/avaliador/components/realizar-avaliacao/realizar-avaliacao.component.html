@@ -1,0 +1,22 @@
+<div class="container-cadastro">
+    <app-input-mask mask="000.000.000-00" [(ngModel)]="inputCpf" label="CPF" type="text"
+        placeholder="CPF do cliente"></app-input-mask>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Renda</mat-label>
+        <input matInput placeholder="Renda do cliente" [(ngModel)]="inputRenda" />
+    </mat-form-field>
+
+    <div>
+        <app-button label="Buscar" color="primary" (buttonClick)="buscarCartoes()"></app-button>
+    </div>
+</div>
+
+<div class="container-cadastro">
+    <h2 *ngIf="estaVazio">Nenhum cartão encontrado</h2>
+    <div *ngFor="let cartao of cartoes" class="w-52 inline-block mx-3 p-10 border border-gray-200 rounded-md shadow-md">
+        <p>{{ cartao.bandeira }}</p>
+        <p>{{ cartao.cartao }}</p>
+        <p>{{ cartao.limiteAprovado | currency }}</p>
+    </div>
+</div>

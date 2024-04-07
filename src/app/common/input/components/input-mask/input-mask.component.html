@@ -1,0 +1,5 @@
+<mat-form-field [class]="class">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput [mask]="mask" [placeholder]="placeholder" (input)="onInput($event)" />
+    <ng-content></ng-content>
+</mat-form-field>

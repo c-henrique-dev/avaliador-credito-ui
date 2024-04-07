@@ -1,0 +1,16 @@
+<section class="container-cadastro">
+    <h1>Infomações do Cliente</h1>
+    <form class="example-form" [formGroup]="formCliente">
+        <app-input-normal formControlName="nome" type="text" label="Nome" placeholder="Nome do cliente">
+        </app-input-normal>
+
+        <app-input-mask class="example-full-width" mask="000.000.000-00" formControlName="cpf" type="text" label="CPF"
+            placeholder="CPF do cliente">
+        </app-input-mask>
+
+        <app-input-normal formControlName="idade" type="text" label="Idade" placeholder="Idade do cliente">
+        </app-input-normal>
+
+        <app-button label="Cadastrar" color="primary" (buttonClick)="salvarCliente()"></app-button>
+    </form>
+</section>
